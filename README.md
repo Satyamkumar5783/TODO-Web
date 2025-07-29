@@ -68,7 +68,16 @@ Frontend will run on: http://localhost:3000
 Backend will run on: http://localhost:5000 (or your custom port)
 
 🖼️ Screenshots
-(Add screenshots or demo GIFs here)
+
+
+### 🏠 Home Page
+![Todo List Screenshot](Screenshot.png/ui1.png)
+
+### 🔑 Login page
+![Todo login](Screenshot.png/ui2.png)
+
+### ✅ Add Todo
+![Add Todo](Screenshot.png/ui3.png)
 
 🌐 Deployment
 You can deploy this project using:
