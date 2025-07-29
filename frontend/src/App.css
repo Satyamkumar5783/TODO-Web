@@ -1,0 +1,127 @@
+/* Basic styling */
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%);
+  background-size: 200% 200%;
+  animation: gradientBG 12s ease-in-out infinite;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Optional: Soft white overlay for glass effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/cubes.png") repeat;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Decorative gradient ring behind the card */
+.center-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  position: relative;
+  z-index: 1;
+}
+
+.center-card-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff0 60%, #a18cd1 100%);
+  filter: blur(30px);
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.center-card {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 32px;
+  box-shadow: 0 12px 40px rgba(76,110,245,0.18), 0 2px 12px rgba(120, 80, 220, 0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  text-align: center;
+  animation: fadeIn 1s;
+  backdrop-filter: blur(14px);
+  border: 2.5px solid rgba(161, 140, 209, 0.18);
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+}
+
+.center-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 18px 60px 0 rgba(161,140,209,0.22), 0 4px 18px rgba(120, 80, 220, 0.13);
+  border: 2.5px solid #a18cd1;
+}
+
+.center-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  border-radius: 32px 32px 0 0;
+  background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.center-card h1 {
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+  color: #3a2c5c;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.center-card h1 .emoji {
+  font-size: 2.7rem;
+  filter: drop-shadow(0 2px 8px rgba(161,140,209,0.13));
+  animation: emojiPop 1.2s infinite alternate;
+}
+
+@keyframes emojiPop {
+  0% { transform: scale(1) rotate(-8deg);}
+  100% { transform: scale(1.18) rotate(8deg);}
+}
+
+.center-card p {
+  font-size: 1.18rem;
+  color: #5f5b6b;
+  margin-bottom: 0;
+  letter-spacing: 0.2px;
+  line-height: 1.7;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .center-card-wrapper::before {
+    width: 260px;
+    height: 260px;
+  }
+  .center-card {
+    max-width: 98vw;
+    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+  }
+}
