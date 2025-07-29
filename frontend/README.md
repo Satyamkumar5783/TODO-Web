@@ -19,7 +19,7 @@ Frontend: React.js, CSS/Tailwind (optional), Axios
 
 Backend: Node.js, Express.js, MongoDB, Mongoose
 
-Tools: Git, VS Code, Postman, Nodemon
+Tools: Git, VS Code
 
 ✅ Features
 Add new tasks
@@ -76,6 +76,7 @@ You can deploy this project using:
 Frontend: Vercel or Netlify
 
 Backend: Render, Railway, Cyclic, or your own VPS
+
 
 🙋‍♂️ Author
 Satyam Kumar
